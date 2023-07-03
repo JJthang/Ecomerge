@@ -1,10 +1,10 @@
-import CategorySchame from "../Models/Category";
 import ProductSchame from "../Models/Product";
-import { CheckValidate } from "../Validate/Product";
+import { CheckValidateCate } from "../Validate/CateRoute";
+import CategorySchame from "../Models/Category";
 
-export const Create_Product = async (req, res) => {
+export const Create_Category = async (req, res) => {
   try {
-    const { error } = CheckValidate.validate(req.body);
+    const { error } = CheckValidateCate.validate(req.body);
     console.log(error);
     if (error) {
       return res.json({
@@ -12,21 +12,15 @@ export const Create_Product = async (req, res) => {
         error: error.details[0].message,
       });
     }
-    const { Product_Name } = req.body;
-    const ProductExists = await ProductSchame.findOne({ Product_Name });
-    if (ProductExists) {
+    const { Cate_Name } = req.body;
+    const CategoryExists = await CategorySchame.findOne({ Cate_Name });
+    if (CategoryExists) {
       return res.json({
-        message: "Product already exists",
+        message: "Category exists",
       });
     }
-    const data = await ProductSchame.create(req.body);
-
-    await CategorySchame.findByIdAndUpdate(data.Category, {
-      $addToSet: {
-        Product: data._id,
-      },
-    });
-
+    const data = await CategorySchame.create(req.body);
+    console.log("a1");
     return res.json({
       message: "Thêm sản phẩm thành công",
       data: data,
@@ -38,9 +32,9 @@ export const Create_Product = async (req, res) => {
   }
 };
 
-export const Get_Product = async (req, res) => {
+export const Get_Category = async (req, res) => {
   try {
-    const data = await ProductSchame.find();
+    const data = await CategorySchame.find();
     if (data) {
       return res.status(200).json({
         message: "Get Data Success",
@@ -54,9 +48,11 @@ export const Get_Product = async (req, res) => {
   }
 };
 
-export const Get_One_Product = async (req, res) => {
+export const Get_One_Category = async (req, res) => {
   try {
-    const data = await ProductSchame.findById(req.params.id);
+    const data = await CategorySchame.findById(req.params.id).populate(
+      "Product"
+    );
     if (data) {
       return res.status(200).json({
         message: "Get Data Success ",
@@ -74,23 +70,17 @@ export const Get_One_Product = async (req, res) => {
   }
 };
 
-export const Delete_Product = async (req, res) => {
+export const Delete_Category = async (req, res) => {
   try {
-    const product = await ProductSchame.findById(req.params.id);
-    if (!product) {
-      return res.status(404).json({
-        message: "Không tìm thấy sản phẩm",
-      });
-    } else {
-      await ProductSchame.deleteOne();
-      await CategorySchame.findByIdAndUpdate(product.Category, {
-        $pull: { Product: product._id },
+    const data = await CategorySchame.findByIdAndDelete({
+      _id: req.params.id,
+    });
+    if (data) {
+      return res.status(200).json({
+        message: "Product deleted successfully",
+        data: data,
       });
     }
-    return res.json({
-      message: "Delete Product Successfully",
-      data: product,
-    });
   } catch (error) {
     return res.status(401).json({
       message: error.message,
@@ -98,15 +88,15 @@ export const Delete_Product = async (req, res) => {
   }
 };
 
-export const Put_Product = async (req, res) => {
+export const Put_Category = async (req, res) => {
   try {
-    const { error } = CheckValidate.validate(req.body);
+    const { error } = await CheckValidateCate.validate(req.body);
     if (error) {
       return res.status(400).json({
         message: error.details[0].message,
       });
     }
-    const data = await ProductSchame.findByIdAndUpdate(
+    const data = await CategorySchame.findByIdAndUpdate(
       { _id: req.params.id },
       req.body,
       { new: true }
