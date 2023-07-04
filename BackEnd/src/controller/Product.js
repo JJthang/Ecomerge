@@ -1,11 +1,11 @@
 import CategorySchame from "../Models/Category";
 import ProductSchame from "../Models/Product";
 import { CheckValidate } from "../Validate/Product";
+import cloudinary from "../config/Cloudinary";
 
 export const Create_Product = async (req, res) => {
   try {
     const { error } = CheckValidate.validate(req.body);
-    console.log(error);
     if (error) {
       return res.json({
         message: "Error",
