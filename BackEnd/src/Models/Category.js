@@ -10,6 +10,6 @@ const CategorySchame = mongoose.Schema(
       },
     ],
   },
-  { timestamps: true, versionKey: false }
+  { timestamps: false, versionKey: false }
 );
 export default mongoose.model("Category", CategorySchame);

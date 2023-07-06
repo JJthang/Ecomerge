@@ -49,7 +49,7 @@ export const API = createApi({
             query : () => "category",
             providesTags : ['Category']
         }),
-        Categorys : buider.query<ICate , void>({
+        Categorys : buider.query({
             query : (id) => `category/${id}`,
             providesTags : ['Category']
         }),
@@ -62,15 +62,15 @@ export const API = createApi({
             invalidatesTags : ['Category'] 
         }),
         Category_DELETE : buider.mutation<void , ICate>({
-             query : (id) => ({
-                url : `category/${id}`,
+             query : (_id) => ({
+                url : `category/${_id}`,
                 method : 'DELETE',
              }),
              invalidatesTags : ['Category']
         }),
         Category_PUT : buider.mutation<void , ICate>({
-            query : ({id , ...rest}) => ({
-                url : `category/${id}`,
+            query : ({_id , ...rest}) => ({
+                url : `category/${_id}`,
                 method : 'PUT',
                 body : rest
             }),

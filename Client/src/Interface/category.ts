@@ -1,4 +1,4 @@
 export interface ICate {
-    id ?: string | number
+    _id ?: string ,
     Cate_Name: string,
 }

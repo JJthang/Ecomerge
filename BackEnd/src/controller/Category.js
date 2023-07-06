@@ -90,8 +90,9 @@ export const Delete_Category = async (req, res) => {
 
 export const Put_Category = async (req, res) => {
   try {
-    const { error } = await CheckValidateCate.validate(req.body);
+    const { error } = CheckValidateCate.validate(req.body);
     if (error) {
+      console.log(error.details[0].message);
       return res.status(400).json({
         message: error.details[0].message,
       });

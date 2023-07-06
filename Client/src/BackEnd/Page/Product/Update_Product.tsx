@@ -9,8 +9,8 @@ import { useCategoryQuery, useProduct_PUTMutation, useProductsQuery } from "../.
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
-const ProductSchame = yup.object().shape({
-  _i : yup.object(),
+const ProductSchame  = yup.object().shape({
+  _id : yup.string(),
   Product_Name: yup.string().required("Please enter Product_Name"),
   Product_Price: yup.number().required("Please enter Product_Price"),
   Product_KG: yup.number().required("Please enter Product_KG"),
@@ -22,7 +22,7 @@ const ProductSchame = yup.object().shape({
 const Update_Product = () => {
   const [Image , SetImage] = useState<string>("");
   const {id} = useParams();
-  const {data} = useCategoryQuery<any>();
+  const {data} = useCategoryQuery();
   const [Product_Put] = useProduct_PUTMutation();
   const { reset , register, handleSubmit, formState : { errors } } = useForm({
     resolver : yupResolver(ProductSchame)
@@ -33,7 +33,6 @@ const Update_Product = () => {
     value.Product_Image = await SubmitImage();
     await Product_Put(value);
     console.log(value);
-    
     alert("Update successful products");
   };
   useEffect(() => {

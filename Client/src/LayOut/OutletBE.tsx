@@ -143,7 +143,7 @@ export default function OutletBe() {
           },
           {
             text : "Category",
-            path : "/Admin/Category",
+            path : "/Admin/Cate",
             icon : <ClassIcon sx={{ color : "white" }} />
           },
           {

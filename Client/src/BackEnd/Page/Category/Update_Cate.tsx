@@ -3,24 +3,34 @@ import * as yup from "yup";
 import { Box, Link, TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCategoryQuery, useCategory_ADDMutation } from "../../../Redux/API/API";
+import { useCategoryQuery, useCategory_ADDMutation, useCategory_PUTMutation, useCategorysQuery } from "../../../Redux/API/API";
 import { useForm } from "react-hook-form";
 import { ButtonFig } from "../../../Mui/Component/Product";
+import { ICate } from "../../../Interface/category";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const ProductSchame = yup.object().shape({
+const ProductSchame  = yup.object().shape({
   Cate_Name: yup.string().required("Please enter Product_Name"),
 });
 
-const Add_Cate = () => {
-  const {data} = useCategoryQuery<any>();
-  const [Cate_Add] = useCategory_ADDMutation();
-  const { register, handleSubmit, formState : { errors } } = useForm({
+const Update_Cate = () => {
+  const [Cate_PUT] = useCategory_PUTMutation();
+  const {id}  = useParams();
+  const { reset , register, handleSubmit, formState : { errors } } = useForm({
     resolver : yupResolver(ProductSchame)
   });
+  const CurrentValue = useCategorysQuery(id);
+  const {data} = useCategoryQuery();
+  const TakeOneData : any = data?.data.find((item : any) => item._id == id);
+  
+  useEffect(() => {
+    reset(TakeOneData);
+  }, [TakeOneData, reset])
   const HandFormSubmit = async (value: any ) => {
     console.log(value);
-    Cate_Add(value);
-    alert("More successful Category");
+    Cate_PUT(value);
+    alert("Update successful Category");
   };
   return (
     <div>
@@ -33,15 +43,15 @@ const Add_Cate = () => {
                   color="secondary"
                   fullWidth
                   type="text"
-                  label="Category"
+                  label="Product"
                   helperText={errors.Cate_Name?.message}
                   {...register("Cate_Name")}
                   sx={{ gridColumn: "span 4"}}
                   />
                  <Box >
-                 <ButtonFig type="submit" >Submit</ButtonFig>
+                 <ButtonFig type="submit" >Update</ButtonFig>
                   <ButtonFig sx={{ ml : 2 }} >
-                    <Link sx={{ color : "white" }} href="Show_Cate" >Show</Link>
+                    <Link sx={{ color : "white" }} href="/Admin/Show_Cate" >Show</Link>
                   </ButtonFig>
                  </Box>
                 </Box>
@@ -49,4 +59,4 @@ const Add_Cate = () => {
     </div>
   )
 }
-export default Add_Cate
+export default Update_Cate

@@ -9,6 +9,8 @@ import Show_Order from './BackEnd/Page/Order/Show_Order';
 import Home from './Client/Page/Home';
 import Show_Product from './BackEnd/Page/Product/Show_Product';
 import Update_Product from './BackEnd/Page/Product/Update_Product';
+import Show_Cate from './BackEnd/Page/Category/Show_Cate';
+import Update_Cate from './BackEnd/Page/Category/Update_Cate';
 
 function App() {
 
@@ -25,7 +27,14 @@ function App() {
           <Route path='Update_Product/:id' element={<Update_Product />} />
           //todo Product End
 
-          <Route path='Category' element={<Add_Cate />} />
+          //todo Category Start
+          <Route path='Cate' element={<Add_Cate />} />
+          <Route path='Show_Cate' element={<Show_Cate />} />
+          <Route path='Update_Cate/:id' element={<Update_Cate />} />
+
+          //todo Category End
+
+
           <Route path='Order' element={<Show_Order />} />
         </Route>
       </Routes>

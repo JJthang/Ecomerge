@@ -7,7 +7,7 @@ export const CheckValidateCate = joi.object({
     "any.required": "Trường Cate_Name là bắt buộc",
     "string.empty": "Name không được để trống",
   }),
-  Product: joi.string().empty().messages({
+  Product: joi.array().empty().messages({
     "string.empty": "Password không được để trống",
     "any.required": "Trường password là bắt buộc",
   }),
