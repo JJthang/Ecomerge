@@ -100,12 +100,12 @@ export const Delete_Product = async (req, res) => {
 
 export const Put_Product = async (req, res) => {
   try {
-    const { error } = CheckValidate.validate(req.body);
-    if (error) {
-      return res.status(400).json({
-        message: error.details[0].message,
-      });
-    }
+    // const { error } = CheckValidate.validate(req.body);
+    // if (error) {
+    //   return res.status(400).json({
+    //     message: error.details[0].message,
+    //   });
+    // }
     const data = await ProductSchame.findByIdAndUpdate(
       { _id: req.params.id },
       req.body,
