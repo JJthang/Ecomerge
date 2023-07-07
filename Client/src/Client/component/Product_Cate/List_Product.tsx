@@ -17,9 +17,6 @@ const List_Product = ({List_data} : List_props) => {
     const renderPage = page.map((item) => {
         return <li key={item} >{item}</li>
     })   
-    
-
-
     function valuetext(value: number) {
         return `${value}°C`;
       }

@@ -16,7 +16,7 @@ const Product = () => {
     <Nav />
     <List_Product List_data={Current} />
     <Footer />
-  </div>
+    </div>
   )
 }
 export default Product;

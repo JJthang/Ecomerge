@@ -10,7 +10,7 @@ const Nav = () => {
               <a href="">My Account</a>
             </div>
             <div className="Signin">
-              <a href="">Sign In</a> <span>or</span> <a href="">Register</a>
+              <a href="/SignIn">Sign In</a> <span>or</span> <a href="/Register">Register</a>
             </div>
           </div>
         </div>
@@ -19,11 +19,12 @@ const Nav = () => {
             <img src="../../../public/Image/logo.png" alt="" />
           </div>
           <div className="Menu_List">
-            <a href="">Home</a>
-            <a href="">Shop</a>
+            <a href="/">Home</a>
+            <a href="/">Shop</a>
             <a href="/Product">Products</a>
-            <a href="">Cart</a>
-            <a href="">Contact</a>
+            <a href="/">Cart</a>
+            <a href="/">Contact</a>
+
           </div>
           <div className="Nav_cart">
           <a href=""><i className="fa-solid fa-cart-shopping"></i></a>

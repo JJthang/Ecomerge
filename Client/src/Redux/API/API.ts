@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Iproduct } from "../../Interface/product";
 import { ICate } from "../../Interface/category";
+import { IFLogin, Regiter } from "../../Interface/All";
 
 export const API = createApi({
     reducerPath : "Product_API",
@@ -44,8 +45,7 @@ export const API = createApi({
 
         //todo Category
 
-
-        Category : buider.query<ICate , void>({
+        Category : buider.query<any , void>({
             query : () => "category",
             providesTags : ['Category']
         }),
@@ -75,6 +75,21 @@ export const API = createApi({
                 body : rest
             }),
             invalidatesTags : ['Category']
+        }),
+        //todo  User
+        Register : buider.mutation<object , Regiter>({
+            query : (body) => ({
+                url : "SignUp",
+                method : 'POST',
+                body,
+            })
+        }),
+        Login : buider.mutation<object, IFLogin>({
+            query : (body) => ({
+                url : "SignIn",
+                method : 'POST',
+                body,
+            })
         })
     })
 })
@@ -83,4 +98,5 @@ export const { useCategoryQuery , useCategory_ADDMutation,
     useCategory_DELETEMutation , useCategory_PUTMutation,
     useCategorysQuery, useProductQuery , useProduct_ADDMutation,
     useProduct_DeleteMutation, useProduct_PUTMutation, useProductsQuery,
+    useRegisterMutation, useLoginMutation
     } = API

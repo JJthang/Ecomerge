@@ -1,4 +1,11 @@
+import { Iproduct } from "../../../Interface/product";
+import { useProductQuery } from "../../../Redux/API/API";
+
 const BestSeller = () => {
+  const {data} = useProductQuery();
+  const Current = data?.data.slice(0, 8);
+  
+  
   return (
     <div className="BestSeller_wall">
         <div className="View_wall">
@@ -31,135 +38,27 @@ const BestSeller = () => {
                   <p>Exclusive products have just arrived. Check them out</p>
                 </div>
                 <div className="Sell_production">
-            <div className="item_product">
-                           <div className="item_heading">
-                     <div className="item_heading_img">
-                       <img src="../../../../public/Image/12.png" alt="" />
-                     </div>
-                     <div className="item_heading_title">Available Colors</div>
-                   </div>
-                   <div className="item_bottom">
-                     <div className="item_bottom_name">
-                       <a href="">Winter Sweater</a>
-                     </div>
-                     <div className="item_bottom_price">
-                       <p>6,145</p>
-                     </div>
-                      </div>
-            </div>
-                    <div className="item_product">
+                  {
+                    Current.map((item : Iproduct) => 
+                    <div className="item_product"  key={item._id}>
                     <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
+                            <div className="item_heading_img">
+                               <img src={item.Product_Image} alt="" />
+                            </div>
+                          <div className="item_heading_title">Available Colors</div>
                     </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
+                       <div className="item_bottom">
+                            <div className="item_bottom_name">
+                               <a href="">{item.Product_Name}</a>
+                            </div>
+                            <div className="item_bottom_price">
+                               <p>${item.Product_Price}</p>
+                            </div>
+                        </div>
+                     </div>)
+                  }
+
               </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                    <div className="item_product">
-                    <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

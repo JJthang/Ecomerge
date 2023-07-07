@@ -10,7 +10,7 @@ const Home = () => {
     <div className="Wall" style={{width : "1518px"}} >
       <Nav />
       <Slideshow />
-      <Product />
+      <Product  />
       <BestSeller />
       <Footer />
     </div>

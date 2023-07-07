@@ -1,1 +1,145 @@
-/*# sourceMappingURL=Signin.css.map */
+.Configa, .Wrap_sign .Wrap_sign_title a {
+  text-decoration: none;
+  color: #566686;
+  transition: 0.5s;
+}
+.Configa:hover, .Wrap_sign .Wrap_sign_title a:hover {
+  color: #60babe;
+}
+
+.configcenter_NoColum, .Wrap_sign .FormSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Wrap_sign {
+  width: 100%;
+  height: 800px;
+}
+.Wrap_sign .Wrap_sign_title {
+  width: 100%;
+  height: 20%;
+  background-color: #f1f2f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Wrap_sign .Wrap_sign_title h1 {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #60babe;
+  font-family: monospace;
+}
+.Wrap_sign .FormSubmit {
+  width: 100%;
+  height: 80%;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap {
+  width: 50%;
+  height: 80%;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .FormSubmit_title {
+  width: 100%;
+  height: 10%;
+  background-color: #60babe;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .FormSubmit_title h3 {
+  font-size: 17px;
+  margin-left: 10px;
+  font-weight: 600;
+  color: white;
+  font-family: monospace;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container {
+  width: 100%;
+  height: 90%;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form {
+  width: 100%;
+  height: 100%;
+  border: 0.5px solid #e0e4ed;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_child {
+  width: 100%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_child .item_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_child .item_form label {
+  color: #7d8fb3;
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_child .item_form input {
+  width: 85%;
+  height: 40px;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid #e9e9e9;
+  background-color: #fcfcfd;
+  color: #7d8fb3;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_child .item_form input:focus {
+  outline: none;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_action {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_action button {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #60babe;
+  border: none;
+  font-size: 1.2rem;
+}
+.Wrap_sign .FormSubmit .FormSubmit_wrap .form_container form .form_action button:hover {
+  cursor: pointer;
+}
+
+.form_child_In {
+  width: 100%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: auto;
+}
+.form_child_In .item_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.form_child_In .item_form label {
+  color: #7d8fb3;
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+.form_child_In .item_form input {
+  width: 90%;
+  height: 40px;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid #e9e9e9;
+  background-color: #fcfcfd;
+  color: #7d8fb3;
+}
+.form_child_In .item_form input:focus {
+  outline: none;
+}/*# sourceMappingURL=Signin.css.map */

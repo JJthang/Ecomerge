@@ -55,7 +55,7 @@ export const Get_One_Category = async (req, res) => {
     );
     if (data) {
       return res.status(200).json({
-        message: "Get Data Success ",
+        message: "Get One Data Success ",
         data: data,
       });
     } else {
