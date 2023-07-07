@@ -1,8 +1,8 @@
 import BestSeller from "../component/Home/BestSeller"
-import Footer from "../component/Home/Footer"
+import Footer from "../component/Shared_components/Footer"
 import Slideshow from "../component/Home/Header"
 import Product from "../component/Home/Product"
-import Nav from "../component/Nav"
+import Nav from "../component/Shared_components/Nav"
 
 const Home = () => {
 

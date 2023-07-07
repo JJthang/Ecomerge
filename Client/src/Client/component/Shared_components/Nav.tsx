@@ -21,7 +21,7 @@ const Nav = () => {
           <div className="Menu_List">
             <a href="">Home</a>
             <a href="">Shop</a>
-            <a href="">Products</a>
+            <a href="/Product">Products</a>
             <a href="">Cart</a>
             <a href="">Contact</a>
           </div>

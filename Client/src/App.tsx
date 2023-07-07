@@ -11,8 +11,11 @@ import Show_Product from './BackEnd/Page/Product/Show_Product';
 import Update_Product from './BackEnd/Page/Product/Update_Product';
 import Show_Cate from './BackEnd/Page/Category/Show_Cate';
 import Update_Cate from './BackEnd/Page/Category/Update_Cate';
+import Product from './Client/Page/Product';
 
 function App() {
+
+    
 
   return (
     <>
@@ -40,11 +43,13 @@ function App() {
       </Routes>
       </BrowserRouter>
         </Container>
+
     </ThemeProvider>
-    <BrowserRouter>
-      <Routes>
-      <Route path='/' element={<Home />} />
-      </Routes>
+      <BrowserRouter>
+         <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Product' element={<Product />} />
+         </Routes>
       </BrowserRouter>
     </>
   )

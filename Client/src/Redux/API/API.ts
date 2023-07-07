@@ -8,7 +8,7 @@ export const API = createApi({
     baseQuery : fetchBaseQuery( { baseUrl : "http://localhost:8080/api/" }),
     endpoints : (buider) => ({
         //todo query< 1 , 2 > : 1 là type giá trị xuất ra còn 2 là giá trị khi truyền vào fuction
-        product : buider.query<Iproduct[], void >({
+        product : buider.query<any , void >({
             query : () => "product",
             providesTags : ["product"],
         }),
