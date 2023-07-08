@@ -24,10 +24,10 @@ const BestSeller = () => {
         <div className="Banner_wall">
             <div className="Banner_wrapper" >
                 <div className="Banner_shoe">
-                    <a href=""><img src="../../../../public/Image/e_mid_banner1.jpg" alt="" /></a>
+                    <a href="/"><img src="../../../../public/Image/e_mid_banner1.jpg" alt="" /></a>
                 </div>
                 <div className="Banner_clock">
-                <a href=""><img src="../../../../public/Image/e_mid_banner2.jpg" alt="" /></a>
+                <a href="/"><img src="../../../../public/Image/e_mid_banner2.jpg" alt="" /></a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ const BestSeller = () => {
                 </div>
                 <div className="Sell_production">
                   {
-                    Current.map((item : Iproduct) => 
+                    Current?.map((item : Iproduct) => 
                     <div className="item_product"  key={item._id}>
                     <div className="item_heading">
                             <div className="item_heading_img">
@@ -49,7 +49,7 @@ const BestSeller = () => {
                     </div>
                        <div className="item_bottom">
                             <div className="item_bottom_name">
-                               <a href="">{item.Product_Name}</a>
+                               <a href={`/Product_Detail/${item._id}`}>{item.Product_Name}</a>
                             </div>
                             <div className="item_bottom_price">
                                <p>${item.Product_Price}</p>

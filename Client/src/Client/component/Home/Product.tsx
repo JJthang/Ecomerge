@@ -43,7 +43,7 @@ const Product = () => {
                 </div>
                 <div className="item_bottom">
                   <div className="item_bottom_name">
-                    <a href="">{item.Product_Name}</a>
+                    <a href={`/Product_Detail/${item._id}`}>{item.Product_Name}</a>
                   </div>
                   <div className="item_bottom_price">
                     <p>${item.Product_Price}</p>

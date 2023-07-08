@@ -14,6 +14,7 @@ import Update_Cate from './BackEnd/Page/Category/Update_Cate';
 import Product from './Client/Page/Product';
 import Register from './Client/Page/Register';
 import Signin from './Client/Page/SignIn';
+import Product_Detail from './Client/Page/Product_Detail';
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
          <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Product' element={<Product />} />
+            <Route path='/Product_Detail/:id' element={<Product_Detail />} />
+            
             <Route path='/Register' element={<Register />} />
             <Route path='/SignIn' element={<Signin />} />
          </Routes>

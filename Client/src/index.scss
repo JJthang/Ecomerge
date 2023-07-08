@@ -1,5 +1,34 @@
 $Dark : #141B2D;
+$turquoise : "#6DB0B3";
+$txt_color: #7d8fb3;
+$sub_txt_color: #E5EAF5;
+$sub_a : #566686;
+$primary-color: #60babe;
 
+.Configa{
+    text-decoration: none;
+    color: $sub_a;
+    transition: 0.5s;
+    &:hover{
+        color: $primary-color;
+    }
+}
+.configcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.configcenter_NoColum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 // body {
 //     background-color: $Dark !important;
 // }
@@ -12,4 +41,260 @@ $Dark : #141B2D;
 }
 .css-j92yoe-MuiDrawer-docked .MuiDrawer-paper {
     background-color: #080f22;
+}
+.Wrap_Detail{
+    width: 100%;
+    height: 800px;
+    .Detail_title{
+        width: 100%;
+        height: 20%;
+        background-color: #F1F2F6;
+        @extend .configcenter;
+            h1{
+                font-size: 30px;
+                font-weight: 600;
+                color: $primary-color;
+                font-family: monospace;
+                margin-bottom: 10px;
+            }
+            a{
+                @extend .Configa
+            }
+    }
+    .Detail_product{
+        width: 100%;
+        height: 75%;
+        margin-top: 5%;
+        @extend .configcenter;
+        .Detail_product_wrap{
+            width: 80%;
+            height: 100%;
+            form{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                .form_img{
+                    width: 50%;
+                    height: 100%;
+                    @extend .configcenter;
+                    .wrap_Img{
+                        width: 65%;
+                        height: 100%;
+                        background-color: #F2F3F5;
+                        margin-left: 15%;
+                        @extend .configcenter;
+                        img{
+                            width: 65%;
+                            height: 80%;
+                        }
+                    }
+                }
+                .form_Product{
+                    width: 50%;
+                    height: 100%;
+                    .form_Product_title{
+                        width: 100%;
+                        height: 20%;
+                        border-bottom: 1px solid #ebeeee;
+                        h1{
+                            font-size: 30px;
+                            font-weight: 600;
+                            color: #566686;
+                            font-family: monospace;
+                        }
+                        p{
+                            color: #47C0B9;
+                        }
+                        .one{
+                            color: #FEC007;
+                            padding-top: 6px;
+                        }
+                        .two{
+                            color: #D0D0D0;
+                            padding-top: 6px;
+                        }
+                        span{
+                            color: #D0D0D0;
+                            padding-left: 5px;
+                        }
+                    }
+                    .Form_Submit{
+                        width: 100%;
+                        height: 80%;
+                        .Price{
+                            width: 100%;
+                            height: 15%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            h2{
+                                color: $primary-color;
+                            }
+                            p{
+                                color: red;
+                                font-weight: 900;
+                                padding-left: 10px;
+
+                            }
+                            span{
+                                color: green;
+                                padding-left: 10px;
+                                font-weight: 900;
+                            }
+                        }
+                        .handle{
+                            width: 100%;
+                            height: 85%;
+                            .kg{
+                                width: 100%;
+                                height: 33%;
+                                display: flex;
+                                .kg_name{
+                                    width: 30%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    p{
+                                        font-size: 1.2rem;
+                                        font-weight: 900;
+                                        color: #566686;
+                                    }
+                                }
+                                .kg_sl{
+                                    width: 70%;
+                                    height: 100%;
+                                    @extend .Start;
+                                    p{
+                                        font-size: 1.2rem;
+                                        font-weight: 900;
+                                        color: #566686;
+
+                                    }
+                                }
+                            }
+                            .Deliver{
+                                width: 100%;
+                                height: 33%;
+                                display: flex;
+                                .Deliver_name{
+                                    width: 30%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    p{
+                                        font-size: 1.2rem;
+                                        font-weight: 900;
+                                        color: #566686;
+                                    }
+                                }
+                                .Deliver_sl{
+                                    width: 70%;
+                                    height: 100%;
+                                    @extend .Start;
+                                    input{
+                                        width: 70%;
+                                        height: 40px;
+                                        border: 1px solid $txt_color;
+                                        font-weight: 400;
+                                        padding-left: 5px;
+                                        padding-right: 16px;
+                                        border-radius: 3px;
+                                        &:focus{
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .Quantity{
+                                width: 100%;
+                                height: 33%;
+                                display: flex;
+                                .Quantity_name{
+                                    width: 30%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    p{
+                                        font-size: 1.2rem;
+                                        font-weight: 900;
+                                        color: #566686;
+                                    }
+                                }
+                                .Quantity_sl{
+                                    width: 70%;
+                                    height: 100%;
+                                    @extend .Start;
+                                    input{
+                                        width: 10%;
+                                        height: 40px;
+                                        border: 1px solid $txt_color;
+                                        font-weight: 400;
+                                        padding-left: 10px;
+                                        // padding-right: 10px;
+                                        font-size: 1.5rem;
+                                        border-radius: 3px;
+                                        &:focus{
+                                            outline: none;
+                                        }
+                                    }
+                                    button{
+                                        width: 100px;
+                                        height: 40px;
+                                        background-color: $primary-color;
+                                        border: none;
+                                        margin-left: 20px;
+                                        color: white;
+                                        transition: 0.3s ease-in-out;
+                                        &:hover{
+                                            background-color: white;
+                                            color: #47C0B9;
+                                            border: 1px solid $primary-color    ;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .desc{
+                width: 100%;
+                height: 30%;
+                @extend .configcenter;
+                .desc_wrap{
+                    width: 75%;
+                    height: 100%;
+
+                    .title_desc{
+                        width: 100%;
+                        height: 35%;
+                        @extend .Start;
+                        border-bottom: 1px solid #dde3f0;
+                        h2{
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: #566686;
+                            border-bottom: 2px solid $primary-color;
+                            padding-bottom: 10px;
+                            line-height: 10px;
+                        }
+                    }
+                    .title_content{
+                        width: 100%;
+                        height: 65%;
+                        p{
+                            font-size: 1rem;
+                            font-weight: 900;
+                            color: #918FB3;
+                            padding-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
