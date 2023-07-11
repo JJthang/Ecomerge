@@ -22,7 +22,7 @@ const Nav = () => {
             <a href="/">Home</a>
             <a href="/">Shop</a>
             <a href="/Product">Products</a>
-            <a href="/">Cart</a>
+            <a href="/Cart">Cart</a>
             <a href="/">Contact</a>
 
           </div>

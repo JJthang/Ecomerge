@@ -17,6 +17,7 @@ const Form_SignUp = () => {
   const [Regis_User] = useRegisterMutation();
   const SubmitForm = async (e : any ) => {
     const Aleart = await Regis_User(e);
+    localStorage.setItem("id_user" , Aleart?.data.data._id);
     alert(Aleart?.data.message);
   }
   return (

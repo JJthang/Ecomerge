@@ -1,11 +1,30 @@
+import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import { useProductsQuery } from "../../../Redux/API/API"
+import { usePost_CartMutation, useProductsQuery } from "../../../Redux/API/API"
 
 
 const Detail = () => {
   const {id} = useParams();
   const {data} = useProductsQuery(id);
-  
+  const { register , handleSubmit } = useForm();
+  const [Post_Cart] = usePost_CartMutation();
+  const Submitform = async (e : any) => {
+    const targetObject = Object.assign(e, data?.data);
+    const id_user = JSON.parse(localStorage.getItem("user") || '{}') ;
+    if (id_user) {
+      const Detail_product = {
+        id_user : id_user.user._id,
+        List_Product : targetObject,
+      }
+      const Alert = await Post_Cart(Detail_product)
+      alert(Alert?.data.message);
+    }else{
+      alert("Please login")
+    }
+
+  }
+
+
   return (
     <div className="Wrap_Detail">
       <div className="Detail_title">
@@ -14,7 +33,7 @@ const Detail = () => {
       </div>
       <div className="Detail_product">
         <div className="Detail_product_wrap">
-          <form action="">
+          <form action="" onSubmit={handleSubmit(Submitform)} >
             <div className="form_img">
               <div className="wrap_Img">
               <img src={data?.data.Product_Image} alt="" />
@@ -46,11 +65,11 @@ const Detail = () => {
                     </div>
                     <div className="Deliver">
                       <div className="Deliver_name"><p>Deliver to : </p></div>
-                      <div className="Deliver_sl"><input type="text" placeholder="Enter your Address..." /></div>
+                      <div className="Deliver_sl"><input {...register("code")} required type="text" placeholder="Enter your pincode..." /></div>
                     </div>
                     <div className="Quantity">
-                    <div className="Quantity_name"><p>Deliver to : </p></div>
-                      <div className="Quantity_sl"><input type="number" min={1} max={10} placeholder="0"  />
+                    <div className="Quantity_name"><p>Quantity : </p></div>
+                      <div className="Quantity_sl"><input {...register("Quantity")} type="number" min={1} defaultValue={1} max={10}   />
                       <button type="submit" >Add to Cart</button>
                       </div>
                     </div>

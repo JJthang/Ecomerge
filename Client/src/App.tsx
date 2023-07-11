@@ -5,7 +5,6 @@ import theme from "./Mui/theme";
 import { Container } from "@mui/material";
 import Add_Product from './BackEnd/Page/Product/Add_Product';
 import Add_Cate from './BackEnd/Page/Category/Add_Cate';
-import Show_Order from './BackEnd/Page/Order/Show_Order';
 import Home from './Client/Page/Home';
 import Show_Product from './BackEnd/Page/Product/Show_Product';
 import Update_Product from './BackEnd/Page/Product/Update_Product';
@@ -15,6 +14,7 @@ import Product from './Client/Page/Product';
 import Register from './Client/Page/Register';
 import Signin from './Client/Page/SignIn';
 import Product_Detail from './Client/Page/Product_Detail';
+import Cart from './Client/Page/Cart';
 
 function App() {
 
@@ -39,9 +39,6 @@ function App() {
           <Route path='Update_Cate/:id' element={<Update_Cate />} />
 
           //todo Category End
-
-
-          <Route path='Order' element={<Show_Order />} />
         </Route>
       </Routes>
       </BrowserRouter>
@@ -53,7 +50,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/Product' element={<Product />} />
             <Route path='/Product_Detail/:id' element={<Product_Detail />} />
-            
+            <Route path='/Cart' element={<Cart />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/SignIn' element={<Signin />} />
          </Routes>

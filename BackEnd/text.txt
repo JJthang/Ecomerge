@@ -1,0 +1,12 @@
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({
+        message: "Invalid product ID",
+      });
+    }
+
+    const result = await SchameCart.updateOne(
+      { id_user: "64a974313b0a3e868ff2a365" },
+      {
+        $pull: { List_Product: { _id: req.params.id } },
+      }
+    );

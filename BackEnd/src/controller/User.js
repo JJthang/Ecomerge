@@ -1,3 +1,4 @@
+import SchameCart from "../Models/Cart";
 import SchameUser from "../Models/User";
 import { CheckValidateSignIn, CheckValidateSignUp } from "../Validate/User";
 import bcrypt from "bcryptjs";
@@ -24,6 +25,9 @@ export const SignUp = async (req, res) => {
       User_email,
       User_password: HashedPassword,
     });
+    console.log("1");
+
+    console.log("2");
     user.User_password = undefined;
     return res.json({
       message: "Create user Successfully",
@@ -51,6 +55,10 @@ export const SIgnIn = async (req, res) => {
         message: "User is not exist",
       });
     }
+    await SchameCart.create({
+      id_user: user._id,
+      List_Product: [],
+    });
     const isMatch = bcrypt.compare(User_password, user.User_password);
     if (!isMatch) {
       return res.json({

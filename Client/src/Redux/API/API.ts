@@ -5,7 +5,7 @@ import { IFLogin, Regiter } from "../../Interface/All";
 
 export const API = createApi({
     reducerPath : "Product_API",
-    tagTypes : ["product", "Category"],
+    tagTypes : ["product", "Category", "Cart"],
     baseQuery : fetchBaseQuery( { baseUrl : "http://localhost:8080/api/" }),
     endpoints : (buider) => ({
         //todo query< 1 , 2 > : 1 là type giá trị xuất ra còn 2 là giá trị khi truyền vào fuction
@@ -90,6 +90,20 @@ export const API = createApi({
                 method : 'POST',
                 body,
             })
+        }),
+
+        //todo Cart
+        Post_Cart : buider.mutation({
+            query : (body) => ({
+                url : "cart",
+                method : 'POST',
+                body,
+            }),
+            invalidatesTags : ['Cart'],
+        }),
+        Get_One_Cart : buider.query({
+            query : (id) => `cart/${id}`,
+            providesTags : ['Cart'],
         })
     })
 })
@@ -98,5 +112,5 @@ export const { useCategoryQuery , useCategory_ADDMutation,
     useCategory_DELETEMutation , useCategory_PUTMutation,
     useCategorysQuery, useProductQuery , useProduct_ADDMutation,
     useProduct_DeleteMutation, useProduct_PUTMutation, useProductsQuery,
-    useRegisterMutation, useLoginMutation
+    useRegisterMutation, useLoginMutation, usePost_CartMutation , useGet_One_CartQuery
     } = API
