@@ -15,6 +15,8 @@ import Register from './Client/Page/Register';
 import Signin from './Client/Page/SignIn';
 import Product_Detail from './Client/Page/Product_Detail';
 import Cart from './Client/Page/Cart';
+import CheckOut from './Client/Page/CheckOut';
+import Show_Cart from './BackEnd/Page/Cart/Show_Order';
 
 function App() {
 
@@ -39,6 +41,11 @@ function App() {
           <Route path='Update_Cate/:id' element={<Update_Cate />} />
 
           //todo Category End
+          //todo Cart Start
+
+          <Route path='Show_Cart' element={<Show_Cart />} />
+          <Route path='Show_Cart/:id' element={<Show_Cart />} />
+
         </Route>
       </Routes>
       </BrowserRouter>
@@ -53,6 +60,7 @@ function App() {
             <Route path='/Cart' element={<Cart />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/SignIn' element={<Signin />} />
+            <Route path='/CheckOut' element={<CheckOut />} />
          </Routes>
       </BrowserRouter>
     </>

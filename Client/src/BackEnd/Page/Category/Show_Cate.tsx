@@ -4,6 +4,7 @@ import { Box, Button, Link } from '@mui/material';
 import { useCategoryQuery, useCategory_DELETEMutation } from '../../../Redux/API/API';
 import {useEffect, useState} from "react";
 import { ICate } from '../../../Interface/category';
+import { Iproduct } from '../../../Interface/product';
 
 export default function Show_cate() {
     const [row, setrow] = useState<Iproduct[]>([]);

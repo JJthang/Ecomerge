@@ -1,4 +1,4 @@
-import mongoose, { set } from "mongoose";
+import mongoose from "mongoose";
 import SchameCart from "../Models/Cart";
 import { ValidateCart } from "../Validate/Cart";
 
@@ -77,6 +77,9 @@ export const Put_Cate = async (req, res) => {
         message: "Invalid product ID",
       });
     }
+    console.log("Cart1");
+    console.log(req.params.id);
+    console.log(_id);
 
     const result = await SchameCart.updateOne(
       { id_user: req.params.id },
@@ -84,8 +87,7 @@ export const Put_Cate = async (req, res) => {
         $pull: { List_Product: { _id: _id } },
       }
     );
-    console.log("hehe");
-    console.log(result);
+    console.log("Cart2");
     return res.status(200).json({
       message: "Product deleted successfully",
       result,

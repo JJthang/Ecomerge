@@ -1,13 +1,13 @@
-.Configa, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut button, .Wrap_body_Cart .Cart_title a, .Wrap_Detail .Detail_title a {
+.Configa, .Wrap_body_Check .Check_title a, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a, .Wrap_body_Cart .Cart_title a, .Wrap_Detail .Detail_title a {
   text-decoration: none;
   color: #566686;
   transition: 0.5s;
 }
-.Configa:hover, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut button:hover, .Wrap_body_Cart .Cart_title a:hover, .Wrap_Detail .Detail_title a:hover {
+.Configa:hover, .Wrap_body_Check .Check_title a:hover, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a:hover, .Wrap_body_Cart .Cart_title a:hover, .Wrap_Detail .Detail_title a:hover {
   color: #60babe;
 }
 
-.configcenter, .Subtotal .Subtotal_child .Subtotal_child_price, .Wrap_body_Cart .Cart_title, .Wrap_Detail .Detail_product .Detail_product_wrap .desc, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img .wrap_Img, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img, .Wrap_Detail .Detail_product, .Wrap_Detail .Detail_title {
+.configcenter, .Wrap_body_Check .Check_Body .Check_Wrap .Check_form, .Wrap_body_Check .Check_title, .Wrap_body_Check, .Subtotal .Subtotal_child .Subtotal_child_price, .Wrap_body_Cart .Cart_title, .Wrap_Detail .Detail_product .Detail_product_wrap .desc, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img .wrap_Img, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img, .Wrap_Detail .Detail_product, .Wrap_Detail .Detail_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.configcenter_NoColum, .Wrap_body_Cart .Cart_table {
+.configcenter_NoColum, .Wrap_body_Check .Check_Body, .Wrap_body_Cart .Cart_table {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,8 @@
 
 .Wrap_Detail {
   width: 100%;
-  height: 800px;
+  height: 900px;
+  margin-bottom: 100px;
 }
 .Wrap_Detail .Detail_title {
   width: 100%;
@@ -100,6 +101,7 @@
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .form_Product_title p {
   color: #47C0B9;
+  padding-top: 10px;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .form_Product_title .one {
   color: #FEC007;
@@ -127,6 +129,8 @@
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .Price h2 {
   color: #60babe;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .Price p {
   color: red;
@@ -141,10 +145,12 @@
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle {
   width: 100%;
   height: 85%;
+  background-color: #FBFBFB;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .kg {
-  width: 100%;
-  height: 33%;
+  width: 95%;
+  margin-left: 5%;
+  height: 25%;
   display: flex;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .kg .kg_name {
@@ -155,8 +161,8 @@
   align-items: center;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .kg .kg_name p {
-  font-size: 1.2rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 500;
   color: #566686;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .kg .kg_sl {
@@ -164,13 +170,89 @@
   height: 100%;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .kg .kg_sl p {
-  font-size: 1.2rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 500;
   color: #566686;
 }
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size {
+  width: 95%;
+  margin-left: 5%;
+  height: 25%;
+  display: flex;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_name {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_name p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #566686;
+  margin-top: 10px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl {
+  width: 70%;
+  height: 100%;
+  display: flex;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .S {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .S input {
+  cursor: pointer;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .S label {
+  padding-left: 10px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .S label p {
+  font-weight: 700;
+  margin-top: 15px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .M {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .M input {
+  cursor: pointer;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .M label {
+  padding-left: 10px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .M label p {
+  font-weight: 700;
+  margin-top: 15px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .L {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .L input {
+  cursor: pointer;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .L label {
+  padding-left: 10px;
+}
+.Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Size .Size_sl .L label p {
+  font-weight: 700;
+  margin-top: 15px;
+}
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Deliver {
-  width: 100%;
-  height: 33%;
+  width: 95%;
+  margin-left: 5%;
+  height: 25%;
   display: flex;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Deliver .Deliver_name {
@@ -181,8 +263,8 @@
   align-items: center;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Deliver .Deliver_name p {
-  font-size: 1.2rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 500;
   color: #566686;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Deliver .Deliver_sl {
@@ -203,8 +285,9 @@
   outline: none;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Quantity {
-  width: 100%;
-  height: 33%;
+  width: 95%;
+  margin-left: 5%;
+  height: 25%;
   display: flex;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Quantity .Quantity_name {
@@ -215,8 +298,8 @@
   align-items: center;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Quantity .Quantity_name p {
-  font-size: 1.2rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 500;
   color: #566686;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Quantity .Quantity_sl {
@@ -246,6 +329,7 @@
   margin-left: 20px;
   color: white;
   transition: 0.3s ease-in-out;
+  z-index: 1;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap form .form_Product .Form_Submit .handle .Quantity .Quantity_sl button:hover {
   background-color: white;
@@ -256,6 +340,7 @@
 .Wrap_Detail .Detail_product .Detail_product_wrap .desc {
   width: 100%;
   height: 30%;
+  margin: 50px 0px;
 }
 .Wrap_Detail .Detail_product .Detail_product_wrap .desc .desc_wrap {
   width: 75%;
@@ -397,14 +482,12 @@
   justify-content: flex-start;
   align-items: center;
 }
-.Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut button {
-  width: 180px;
-  height: 40px;
+.Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a {
+  padding: 10px 20px;
   background-color: #60babe;
   color: white;
-  border: none;
 }
-.Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut button:hover {
+.Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a:hover {
   border: 1px solid #60babe;
   background-color: white;
 }
@@ -432,4 +515,326 @@
 .Subtotal .Subtotal_child .Subtotal_child_price {
   color: #60babe;
   font-weight: 600;
+}
+
+.Wrap_body_Check {
+  width: 100%;
+  height: 1200px;
+}
+.Wrap_body_Check .Check_title {
+  width: 100%;
+  height: 20%;
+  background-color: #F1F2F6;
+}
+.Wrap_body_Check .Check_Body {
+  width: 100%;
+  height: 70%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap {
+  width: 80%;
+  height: 100%;
+  display: flex;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form {
+  width: 70%;
+  height: 95%;
+  margin-top: 5%;
+  border: 1px solid #e0e4ed;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .Check_form_title {
+  width: 100%;
+  height: 6%;
+  background-color: #222222;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .Check_form_title h2 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 900;
+  margin: 0px 0px 0px 10px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek {
+  width: 80%;
+  height: 88%;
+  margin-top: 6%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form {
+  width: 100%;
+  height: 100%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form {
+  width: 100%;
+  height: 20%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_title {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_title::after {
+  content: "";
+  position: absolute;
+  left: 241px;
+  top: 74%;
+  width: 3px;
+  background-color: rgb(96, 186, 190);
+  height: 3%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_title h2 {
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input {
+  width: 100%;
+  height: 60%;
+  display: flex;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_name {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_name label {
+  color: #7d8fb3;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_name input {
+  width: 95%;
+  height: 80px;
+  margin-bottom: 6px;
+  border: 1px solid #7d8fb3;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 16px;
+  border-radius: 3px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_name input:focus {
+  outline: none;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_Email {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_Email label {
+  color: #7d8fb3;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_Email input {
+  width: 95%;
+  height: 80px;
+  margin-bottom: 6px;
+  border: 1px solid #7d8fb3;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 16px;
+  border-radius: 3px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Information_form .Information_form_input .Information_form_Email input:focus {
+  outline: none;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform {
+  width: 100%;
+  height: 80%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_RessTitle {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_RessTitle h2 {
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_RessTitle::after {
+  content: "";
+  position: absolute;
+  left: 241px;
+  top: 94.2%;
+  width: 3px;
+  background-color: rgb(96, 186, 190);
+  height: 3%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container {
+  width: 100%;
+  height: 90%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Phone_number {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Phone_number label {
+  color: #7d8fb3;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Phone_number input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 6px;
+  border: 1px solid #7d8fb3;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 16px;
+  border-radius: 3px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Phone_number input:focus {
+  outline: none;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .location {
+  width: 100%;
+  height: 30%;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .location label {
+  color: #7d8fb3;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .location input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 6px;
+  border: 1px solid #7d8fb3;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 16px;
+  border-radius: 3px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .location input:focus {
+  outline: none;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment {
+  width: 100%;
+  height: 40%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_title {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_title h2 {
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_title::after {
+  content: "";
+  position: absolute;
+  left: 241px;
+  top: 139.6%;
+  width: 3px;
+  background-color: rgb(96, 186, 190);
+  height: 3%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_container {
+  width: 100%;
+  height: 80%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_container label {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_container input {
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_container button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #60babe;
+  color: white;
+  margin-top: 30px;
+  transition: 0.5s;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_form .body_formchek form .Add_Ressform .Add_Ress_container .Payment .Payment_container button:hover {
+  background-color: white;
+  border: 1px solid #60babe;
+  color: #60babe;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total {
+  width: 30%;
+  height: 95%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap {
+  width: 80%;
+  height: 40%;
+  background-color: #F8F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild {
+  width: 80%;
+  height: 85%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Check_total_title {
+  width: 100%;
+  height: 15%;
+  border-bottom: 0.5px solid rgb(228, 228, 228);
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Check_total_title h2 {
+  font-weight: 500;
+  font-size: 18px;
+  color: #566686;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Subtotal {
+  width: 100%;
+  height: 60%;
+  margin-top: 6%;
+  border-bottom: 0.5px solid rgb(228, 228, 228);
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Subtotal h2 {
+  margin-top: 30px;
+  font-size: 17px;
+  color: #566686;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Subtotal span {
+  padding-left: 100px;
+  font-size: 1rem;
+  color: #60babe;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Global_total {
+  width: 100%;
+  height: 15%;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Global_total h2 {
+  margin-top: 19px;
+  font-size: 20px;
+  color: #566686;
+}
+.Wrap_body_Check .Check_Body .Check_Wrap .Check_total .Check_total_wrap .Check_total_wrapchild .Global_total span {
+  padding-left: 60px;
+  font-size: 1rem;
+  color: #60babe;
+}
+.Wrap_body_Check .Check_Bottom {
+  width: 80%;
+  height: 10%;
 }/*# sourceMappingURL=index.css.map */

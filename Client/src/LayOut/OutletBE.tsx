@@ -148,7 +148,7 @@ export default function OutletBe() {
           },
           {
             text : "Order",
-            path : "/Admin/Order",
+            path : "/Admin/Show_Cart",
             icon : <ProductionQuantityLimitsIcon sx={{ color : "white" }} />
           },
           {

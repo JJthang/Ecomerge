@@ -52,7 +52,6 @@ export default function Show_Product() {
               return <Button sx={{ backgroundColor : "#FF6666", color : "white" , ":hover" : {
                   backgroundColor : "#FF6666", color : "white"
               } }} onClick={() => handleButtonClick(CellValue.row)} >Delete</Button>
-              
           }
         }
         ,

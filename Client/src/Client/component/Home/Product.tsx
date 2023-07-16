@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Product = () => {
   const {data : product} = useCategoryQuery();
-  // const [data , setdata] = useState({});
+  console.log(product);
   const [Current = product?.data[0]._id , SetCurrent] = useState(product?.data[0]._id);
      const TakeIdData = (id : any) => {
       SetCurrent(id)

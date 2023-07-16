@@ -6,16 +6,47 @@ type List_props ={
     List_data : Iproduct[],
 }
 const List_Product = ({List_data} : List_props) => {
-    const [ItemPage , SetItemPage] = useState(8);
+    const [ItemPage , SetItemPage] = useState(6);
+    const [CurrentPage , setCurrentPage] = useState(1);
+
+    const [PageLimit , SetPageLimit] = useState(2);
+    const [PageMaxLimit , SetPageMaxLimit] = useState(3);
+    const [PageMinLimit , SetMinPageLimit] = useState(0);
+
+
     const Leng_Data = List_data?.length;
+    console.log(Leng_Data);
+    
     const page = [];
+
+    const IndexOfLastItem : number =  CurrentPage * ItemPage;
+    const IndexOfFistItem : number = IndexOfLastItem - ItemPage;
+    const CurrentItem = List_data?.slice(IndexOfFistItem,IndexOfLastItem);
+    
     if (Leng_Data) {
         for (let i = 1; i <= Math.ceil(Leng_Data/ ItemPage); i++) {
             page.push(i);
         }
     }
+    const HandClick = (event : any) => {
+      setCurrentPage(event);
+    }
+    const HandNext = () => {
+      setCurrentPage(CurrentPage + 1);
+      if (CurrentPage >= 3) {
+        setCurrentPage(1);
+      }
+    }
+    const HandPrev = () => {
+      setCurrentPage(CurrentPage - 1);
+      if (CurrentPage <= 0) {
+        setCurrentPage(3);
+      }
+    }
     const renderPage = page.map((item) => {
-        return <li key={item} >{item}</li>
+      if (item < PageMaxLimit + 1 && item > PageMinLimit) {
+        return <li key={item} className={CurrentPage == item ? "active" : ""}  onClick={() => HandClick(item)} >{item}</li>
+      }
     })   
     function valuetext(value: number) {
         return `${value}°C`;
@@ -32,154 +63,35 @@ const List_Product = ({List_data} : List_props) => {
                         <p>Showing items 1 to 12 of 40 total</p>
                     </div>
                     <div className="Production_List">
-                    <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="item_heading">
-              <div className="item_heading_img">
-                <img src="../../../../public/Image/12.png" alt="" />
-              </div>
-              <div className="item_heading_title">Available Colors</div>
-            </div>
-            <div className="item_bottom">
-              <div className="item_bottom_name">
-                <a href="">Winter Sweater</a>
-              </div>
-              <div className="item_bottom_price">
-                <p>6,145</p>
-              </div>
-            </div>
-          </div>
+                      {
+                        CurrentItem?.map((item : any) => 
+                        <div className="item" key={item._id}>
+                        <div className="item_heading">
+                          <div className="item_heading_img">
+                            <img src={item.Product_Image} alt="" />
+                          </div>
+                          <div className="item_heading_title">Available Colors</div>
+                        </div>
+                        <div className="item_bottom">
+                          <div className="item_bottom_name">
+                            <a href={`/Product_Detail/${item._id}`}>{item.Product_Name}</a>
+                          </div>
+                          <div className="item_bottom_price">
+                            <p>${item.Product_Price}</p>
+                          </div>
+                        </div>
+                      </div>)
+                      }
             </div>
                     <div className="Production_pagation">
                         <ul className="Fix_Page">
+                          <li className="Prev" >
+                            <button onClick={HandPrev} >Prev</button>
+                          </li>
                             {renderPage}
+                            <li className="Next">
+                            <button onClick={HandNext} >Next</button>
+                          </li>
                         </ul>
                     </div>
                 </div>

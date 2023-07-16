@@ -23,7 +23,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="inter">
-            <div className="fotter_title">
+            <div className="fotter_title1">
                 <h2>Usefull Links</h2>
                 </div>
                 <ul className="fotter_ul">
@@ -34,7 +34,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="inter">
-            <div className="fotter_title">
+            <div className="fotter_title2">
                 <h2>Our Stores</h2>
                 </div>
                 <ul className="fotter_ul">

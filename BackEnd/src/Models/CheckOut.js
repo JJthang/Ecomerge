@@ -1,8 +1,17 @@
 import mongoose from "mongoose";
 
-const SchameCart = new mongoose.Schema(
+const CheckOut_Schame = new mongoose.Schema(
   {
-    id_user: { type: mongoose.Types.ObjectId },
+    name: String,
+    email: String,
+    number: Number,
+    id_user: String,
+    address: String,
+    status: {
+      type: String,
+      default: "Processing",
+    },
+    payment: String,
     List_Product: [
       {
         _id: String,
@@ -21,4 +30,4 @@ const SchameCart = new mongoose.Schema(
   { timestamps: false, versionKey: false }
 );
 
-export default mongoose.model("Cart", SchameCart);
+export default mongoose.model("CheckOut", CheckOut_Schame);

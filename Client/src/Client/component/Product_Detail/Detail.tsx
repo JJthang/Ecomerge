@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { usePost_CartMutation, useProductsQuery } from "../../../Redux/API/API"
+import { useState } from "react";
 
 
 const Detail = () => {
+  const [size, setsize] = useState({});
   const {id} = useParams();
   const {data} = useProductsQuery(id);
   const { register , handleSubmit } = useForm();
   const [Post_Cart] = usePost_CartMutation();
   const Submitform = async (e : any) => {
-    const targetObject = Object.assign(e, data?.data);
+    const targetObject = Object.assign(e, data?.data, size);
     const id_user = JSON.parse(localStorage.getItem("user") || '{}') ;
     if (id_user) {
       const Detail_product = {
@@ -21,8 +23,11 @@ const Detail = () => {
     }else{
       alert("Please login")
     }
-
   }
+  const TakeSize = (e : React.ChangeEvent<HTMLInputElement>) => {
+    setsize({...size, [e.target.name] : e.target.value});
+  }
+  
 
 
   return (
@@ -62,6 +67,25 @@ const Detail = () => {
                         <p>Kilogram : </p>
                       </div>
                       <div className="kg_sl"><p>{data?.data.Product_KG} KG</p></div>
+                    </div>
+                    <div className="Size">
+                      <div className="Size_name">
+                        <p>Size : </p>
+                      </div>
+                      <div className="Size_sl">
+                        <div className="S">
+                        <input name="size" required onChange={TakeSize} value={"S"} type="radio" />
+                        <label htmlFor=""><p>S</p></label>
+                        </div>
+                        <div className="M">
+                        <input name="size" required onChange={TakeSize} value={"M"} type="radio" />
+                        <label htmlFor=""><p>M</p></label>
+                        </div>
+                        <div className="L">
+                        <input name="size" required onChange={TakeSize} value={"L"} type="radio" />
+                        <label htmlFor=""><p>L</p></label>
+                        </div>
+                      </div>
                     </div>
                     <div className="Deliver">
                       <div className="Deliver_name"><p>Deliver to : </p></div>

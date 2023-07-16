@@ -1,12 +1,10 @@
 import Header from "../../../LayOut/Component/Header"
 import * as yup from "yup";
 import { Box, Link, TextField } from "@mui/material";
-import { Button } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCategoryQuery, useCategory_ADDMutation, useCategory_PUTMutation, useCategorysQuery } from "../../../Redux/API/API";
+import { useCategoryQuery, useCategory_PUTMutation, useCategorysQuery } from "../../../Redux/API/API";
 import { useForm } from "react-hook-form";
 import { ButtonFig } from "../../../Mui/Component/Product";
-import { ICate } from "../../../Interface/category";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 

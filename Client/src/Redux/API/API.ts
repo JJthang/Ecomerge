@@ -5,7 +5,7 @@ import { IFLogin, Regiter } from "../../Interface/All";
 
 export const API = createApi({
     reducerPath : "Product_API",
-    tagTypes : ["product", "Category", "Cart"],
+    tagTypes : ["product", "Category", "Cart", "checkOut"],
     baseQuery : fetchBaseQuery( { baseUrl : "http://localhost:8080/api/" }),
     endpoints : (buider) => ({
         //todo query< 1 , 2 > : 1 là type giá trị xuất ra còn 2 là giá trị khi truyền vào fuction
@@ -104,7 +104,31 @@ export const API = createApi({
         Get_One_Cart : buider.query({
             query : (id) => `cart/${id}`,
             providesTags : ['Cart'],
-        })
+        }),
+        Put_One_Cart : buider.mutation({
+             query : ({id_user , ..._id}) => ({
+                url : `cart/${id_user}`,
+                method : "PUT",
+                body : _id,
+             })
+        }),
+        //todo CheckOut 
+        Post_CheckOut: buider.mutation({
+            query : (body) => ({
+                url : "CheckOut",
+                method : 'POST',
+                body,
+            }),
+        }),
+        Get_One_CheckOut: buider.query({
+            query : (id) => `cart/${id}`,
+            providesTags : ["checkOut"],
+        }),
+        Get_All_CheckOut : buider.query<any , void>({
+            query : () => "CheckOut",
+            providesTags : ["checkOut"],
+        }),
+        
     })
 })
 
@@ -113,4 +137,5 @@ export const { useCategoryQuery , useCategory_ADDMutation,
     useCategorysQuery, useProductQuery , useProduct_ADDMutation,
     useProduct_DeleteMutation, useProduct_PUTMutation, useProductsQuery,
     useRegisterMutation, useLoginMutation, usePost_CartMutation , useGet_One_CartQuery
+    , usePut_One_CartMutation, usePost_CheckOutMutation, useGet_One_CheckOutQuery, useGet_All_CheckOutQuery
     } = API

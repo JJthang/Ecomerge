@@ -133,7 +133,7 @@ $primary-color: #60babe;
                 z-index: 1;
                 h2{
                     background-color:white;
-                    width: 250px;
+                    width: 330px;
                     height: 50px;
                     display: flex;
                     justify-content: center;
@@ -301,7 +301,7 @@ $primary-color: #60babe;
                             align-items: flex-start;
                             p{
                                 color: $primary-color;
-                                font-weight: 900;
+                                font-weight: 700;
                                 font-size: 1.3rem;
                             }
                         }
@@ -462,7 +462,7 @@ $primary-color: #60babe;
                         align-items: flex-start;
                         p{
                             color: $primary-color;
-                            font-weight: 900;
+                            font-weight: 700;
                             font-size: 1.3rem;
                         }
                     }
@@ -502,9 +502,10 @@ $primary-color: #60babe;
         line-height: 50px;
         a{
             text-decoration: none;
-            color: $sub_a;
+            color: #7d8fb3;
             font-size: 1.2rem;
             transition: 0.5s;
+
             &:hover{
                 color: $primary-color;
             }
@@ -513,9 +514,56 @@ $primary-color: #60babe;
 }
 .fotter_title{
     margin-top: 10%;
+    ::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 22px;
+        margin-top: 4px;
+        background: $primary-color;
+        left: 35%;
+        }
     h2{
      font-size: 25px;
     font-weight: 600;
+    font-family: monospace;
+    color: rgb(86, 102, 134);
+    }
+}
+
+.fotter_title1{
+    margin-top: 10%;
+    ::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 22px;
+        margin-top: 4px;
+        background: $primary-color;
+        left: 52.8%;
+        }
+    h2{
+     font-size: 25px;
+    font-weight: 600;
+    font-family: monospace;
+    color: rgb(86, 102, 134);
+    }
+}
+.fotter_title2{
+    margin-top: 10%;
+    ::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 22px;
+        margin-top: 4px;
+        background: $primary-color;
+        left: 72%;
+        }
+    h2{
+     font-size: 25px;
+    font-weight: 600;
+    font-family: monospace;
     color: rgb(86, 102, 134);
     }
 }
