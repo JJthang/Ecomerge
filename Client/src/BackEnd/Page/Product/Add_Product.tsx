@@ -25,9 +25,25 @@ const Add_Product = () => {
     resolver : yupResolver(ProductSchame)
   });
   const HandFormSubmit = async (value: any ) => {
-    value.Product_Image = await SubmitImage();
-    Product_Add(value);
-    alert("More successful products");
+    const {token} : any= JSON.parse(localStorage.getItem('user')!);
+    console.log(token);
+    if (token) {
+      console.log(1);
+      
+      value.Product_Image = await SubmitImage();
+      const CurrentValue = {
+        value,
+        token,
+      }
+      const Aleart = await Product_Add(CurrentValue);
+      alert(Aleart.data.message)
+      
+    }else{
+      console.log(2);
+
+      alert("You are not authorized")
+    }
+
   };
   const SubmitImage = async () => {
     const data  = new FormData();

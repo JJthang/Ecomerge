@@ -4,7 +4,7 @@ export const CheckValidate = joi.object({
   _id: joi.string(),
   Product_Name: joi.string().required().empty().messages({
     "string.required": "Không được để trống",
-    "any.required": "Trường passwofewfwerd là bắt buộc",
+    "any.required": "Trường Product_Name là bắt buộc",
     "string.empty": "Name không được để trống",
   }),
   Product_Price: joi.number().required().empty().messages({
@@ -21,7 +21,7 @@ export const CheckValidate = joi.object({
   }),
   Product_Desc: joi.string().required().empty().messages({
     "string.empty": "Password không được để trống",
-    "any.required": "Trường dwefpassword là bắt buộc",
+    "any.required": "Trường Product_Desc là bắt buộc",
   }),
   Category: joi.string().empty().messages({
     "string.empty": "Password không được để trống",

@@ -1,4 +1,10 @@
+import { useProductQuery } from "../../../Redux/API/API"
+import Search from "./Search"
+
+
 const Nav = () => {
+  const {data} = useProductQuery();
+
   return (
     <div className="Wall_Nav">
         <div className="Notification">
@@ -27,6 +33,7 @@ const Nav = () => {
 
           </div>
           <div className="Nav_cart">
+            <Search data={data} />
           <a href=""><i className="fa-solid fa-cart-shopping"></i></a>
           </div>
         </div>

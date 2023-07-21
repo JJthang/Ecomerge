@@ -1,28 +1,32 @@
 import { Slider } from "@mui/material"
 import { Iproduct } from "../../../Interface/product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type List_props ={
     List_data : Iproduct[],
 }
 const List_Product = ({List_data} : List_props) => {
-    const [ItemPage , SetItemPage] = useState(6);
+    const [ItemPage ] = useState(6);
     const [CurrentPage , setCurrentPage] = useState(1);
-
-    const [PageLimit , SetPageLimit] = useState(2);
-    const [PageMaxLimit , SetPageMaxLimit] = useState(3);
-    const [PageMinLimit , SetMinPageLimit] = useState(0);
+    const [PageMaxLimit ] = useState(3);
+    const [PageMinLimit] = useState(0);
+    const [Find_data , SetFind_data] = useState<any[]>([]);
+    const FindPrice = (event : any) =>  {
+      const CurrentData : any = List_data?.filter((item : any) => item.Product_Price >=0 && item.Product_Price  <= parseInt(event.target.value))
+      SetFind_data(CurrentData)
+    }
+    console.log(Find_data);
+    // useEffect(() => {
+    //   console.log(FindPrice);
+      
+    // },[Find_data]);
 
 
     const Leng_Data = List_data?.length;
-    console.log(Leng_Data);
-    
     const page = [];
-
     const IndexOfLastItem : number =  CurrentPage * ItemPage;
     const IndexOfFistItem : number = IndexOfLastItem - ItemPage;
     const CurrentItem = List_data?.slice(IndexOfFistItem,IndexOfLastItem);
-    
     if (Leng_Data) {
         for (let i = 1; i <= Math.ceil(Leng_Data/ ItemPage); i++) {
             page.push(i);
@@ -64,7 +68,22 @@ const List_Product = ({List_data} : List_props) => {
                     </div>
                     <div className="Production_List">
                       {
-                        CurrentItem?.map((item : any) => 
+                       Find_data.length > 0 ? Find_data?.map((item : any) => <div className="item" key={item._id}>
+                       <div className="item_heading">
+                         <div className="item_heading_img">
+                           <img src={item.Product_Image} alt="" />
+                         </div>
+                         <div className="item_heading_title">Available Colors</div>
+                       </div>
+                       <div className="item_bottom">
+                         <div className="item_bottom_name">
+                           <a href={`/Product_Detail/${item._id}`}>{item.Product_Name}</a>
+                         </div>
+                         <div className="item_bottom_price">
+                           <p>${item.Product_Price}</p>
+                         </div>
+                       </div>
+                     </div>) : CurrentItem?.map((item : any) => 
                         <div className="item" key={item._id}>
                         <div className="item_heading">
                           <div className="item_heading_img">
@@ -112,6 +131,7 @@ const List_Product = ({List_data} : List_props) => {
                             <h1>FILTER BY PRICE</h1>
                         </div>
                     <Slider 
+                        onChange={FindPrice}
                         className="slider"
                         aria-label="Temperature"
                         defaultValue={30}

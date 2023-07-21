@@ -17,12 +17,20 @@ export const API = createApi({
             query : (id) => `product/${id}`,
             providesTags : ["product"],
         }),
-        Product_ADD : buider.mutation<void , Iproduct>({
-            query : (data) => ({
-                url : "product",
-                method : "POST",
-                body : data
-            }),
+        Product_ADD : buider.mutation({
+            query : ({token, ...data}) => {
+                console.log(token);
+                console.log(data.value);
+                return {
+                    url : "product",
+                    method : "POST",
+                    body : data.value,
+                    headers : {
+                        "content-type": "application/json",
+                        'authorization': `Bearer ${token}`
+                    }
+                }
+            },
             invalidatesTags : ['product']
 
         }),

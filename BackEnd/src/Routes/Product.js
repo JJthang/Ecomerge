@@ -9,8 +9,7 @@ import {
 import { CheckPermission } from "../middleware/Check_Permissions";
 
 const route = express.Router();
-// CheckPermission,
-route.post("/product", Create_Product);
+route.post("/product", CheckPermission, Create_Product);
 route.get("/product", Get_Product);
 route.get("/product/:id", Get_One_Product);
 route.delete("/product/:id", Delete_Product);

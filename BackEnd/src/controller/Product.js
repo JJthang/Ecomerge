@@ -28,7 +28,7 @@ export const Create_Product = async (req, res) => {
     });
 
     return res.json({
-      message: "Thêm sản phẩm thành công",
+      message: "Add Product Successfully",
       data: data,
     });
   } catch (error) {
