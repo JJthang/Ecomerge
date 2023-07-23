@@ -22,7 +22,7 @@ export const Create_Category = async (req, res) => {
     const data = await CategorySchame.create(req.body);
     console.log("a1");
     return res.json({
-      message: "Thêm sản phẩm thành công",
+      message: "Add Category Successfully",
       data: data,
     });
   } catch (error) {
@@ -92,7 +92,7 @@ export const Put_Category = async (req, res) => {
   try {
     const { error } = CheckValidateCate.validate(req.body);
     if (error) {
-      console.log(error.details[0].message);
+      console.log(error.details[0].message + "hehe");
       return res.status(400).json({
         message: error.details[0].message,
       });

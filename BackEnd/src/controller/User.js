@@ -55,11 +55,13 @@ export const SIgnIn = async (req, res) => {
         message: "User is not exist",
       });
     }
+    console.log(user);
     await SchameCart.create({
       id_user: user._id,
       List_Product: [],
     });
-    const isMatch = bcrypt.compare(User_password, user.User_password);
+    const isMatch = await bcrypt.compare(User_password, user.User_password);
+    console.log(isMatch);
     if (!isMatch) {
       return res.json({
         message: "Incorrect Password",

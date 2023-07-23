@@ -1,9 +1,8 @@
 import Header from "../../../LayOut/Component/Header"
 import * as yup from "yup";
 import { Box, Link, TextField } from "@mui/material";
-import { Button } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCategoryQuery, useCategory_ADDMutation } from "../../../Redux/API/API";
+import {  useCategory_ADDMutation } from "../../../Redux/API/API";
 import { useForm } from "react-hook-form";
 import { ButtonFig } from "../../../Mui/Component/Product";
 
@@ -12,15 +11,21 @@ const ProductSchame = yup.object().shape({
 });
 
 const Add_Cate = () => {
-  const {data} = useCategoryQuery<any>();
   const [Cate_Add] = useCategory_ADDMutation();
   const { register, handleSubmit, formState : { errors } } = useForm({
     resolver : yupResolver(ProductSchame)
   });
   const HandFormSubmit = async (value: any ) => {
-    console.log(value);
-    Cate_Add(value);
-    alert("More successful Category");
+    const {token} = JSON.parse(localStorage.getItem("user")!);
+    const currentValue = {
+      token,
+      value
+    }
+    console.log(currentValue);
+    
+    const Alert = await  Cate_Add(currentValue);
+    
+    alert(Alert.data.message);
   };
   return (
     <div>

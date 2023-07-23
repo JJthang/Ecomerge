@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useLoginMutation} from "../../../Redux/API/API";
+import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const ShameRegister = yup.object().shape({
@@ -14,18 +15,26 @@ const SignIn_cp = () => {
 
   const { register, handleSubmit, formState : {errors} } = useForm({resolver : yupResolver(ShameRegister)});
   const [Login_User] = useLoginMutation();
+  const navigate = useNavigate();
   const SubmitForm = async (e : any ) => {
     const Aleart = await Login_User(e);
-    const Obj_User : any = {
-      token : Aleart.data.accessTokent,
-      user : Aleart.data.user,
+    if (Aleart.data.user) {
+      const Obj_User : any = {
+        token : Aleart.data.accessTokent,
+        user : Aleart.data.user,
+      }
+      localStorage.setItem('user', JSON.stringify(Obj_User));
+      const retrievedObject : any = JSON.parse(localStorage.getItem('user')!);
+      console.log(retrievedObject);
+      if (retrievedObject.user.User_role == "admin") {
+        navigate("/Admin")
+        alert("Admin login successful")
+      }else{
+        navigate("/")
+      }
+    }else{
+      alert(Aleart.data.message);
     }
-    localStorage.setItem('user', JSON.stringify(Obj_User));
-    const retrievedObject : any = localStorage.getItem('user');
-    console.log(JSON.parse(retrievedObject));
-    
-    
-    alert(Aleart.data.message);
   }
   return (
     <div className="Wrap_sign">

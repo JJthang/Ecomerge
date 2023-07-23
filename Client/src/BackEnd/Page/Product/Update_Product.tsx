@@ -30,10 +30,16 @@ const Update_Product = () => {
   const CurrentValue : any = useProductsQuery(id);
   
   const HandFormSubmit = async (value: any ) => {
+    const {token} : any= JSON.parse(localStorage.getItem('user')!);
+    console.log(id);
     value.Product_Image = await SubmitImage();
-    await Product_Put(value);
-    console.log(value);
-    alert("Update successful products");
+    const CurrentValue = {
+      id,
+      value,
+      token,
+    }
+    const Aleart = await Product_Put(CurrentValue);
+    alert(Aleart.data.message)
   };
   useEffect(() => {
     reset(CurrentValue.data?.data);
@@ -60,6 +66,7 @@ const Update_Product = () => {
                   <TextField 
                   color="secondary"
                   fullWidth
+                  InputLabelProps={{ shrink: true }}
                   type="text"
                   label="Product"
                   helperText={errors.Product_Name?.message}
@@ -69,6 +76,7 @@ const Update_Product = () => {
                      <TextField 
                   color="secondary"
                   fullWidth
+                  InputLabelProps={{ shrink: true }}
                   type="number"
                   label="Product Price"
                   helperText={errors.Product_Price?.message}
@@ -77,6 +85,7 @@ const Update_Product = () => {
                   />
                         <TextField 
                   color="secondary"
+                  InputLabelProps={{ shrink: true }}
                   fullWidth
                   type="number"
                   label="Product_KG"

@@ -18,7 +18,6 @@ const Update_Cate = () => {
   const { reset , register, handleSubmit, formState : { errors } } = useForm({
     resolver : yupResolver(ProductSchame)
   });
-  const CurrentValue = useCategorysQuery(id);
   const {data} = useCategoryQuery();
   const TakeOneData : any = data?.data.find((item : any) => item._id == id);
   
@@ -26,9 +25,17 @@ const Update_Cate = () => {
     reset(TakeOneData);
   }, [TakeOneData, reset])
   const HandFormSubmit = async (value: any ) => {
-    console.log(value);
-    Cate_PUT(value);
-    alert("Update successful Category");
+    const {token} = JSON.parse(localStorage.getItem("user")!);
+    const newObj = Object.assign({}, value);
+     delete newObj.Product;
+    const currentValue = {
+      id,
+      token,
+      newObj
+    }
+    const Alert = await Cate_PUT(currentValue);
+    console.log(Alert);    
+    alert(Alert.data.message);
   };
   return (
     <div>
@@ -40,6 +47,7 @@ const Update_Cate = () => {
                   <TextField 
                   color="secondary"
                   fullWidth
+                  InputLabelProps={{ shrink: true }}
                   type="text"
                   label="Product"
                   helperText={errors.Cate_Name?.message}

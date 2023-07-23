@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Iproduct } from "../../Interface/product";
+import { Interface_token, Iproduct } from "../../Interface/product";
 import { ICate } from "../../Interface/category";
 import { IFLogin, Regiter } from "../../Interface/All";
 
@@ -9,7 +9,7 @@ export const API = createApi({
     baseQuery : fetchBaseQuery( { baseUrl : "http://localhost:8080/api/" }),
     endpoints : (buider) => ({
         //todo query< 1 , 2 > : 1 là type giá trị xuất ra còn 2 là giá trị khi truyền vào fuction
-        product : buider.query<any , void >({
+        product : buider.query<any , void>({
             query : () => "product",
             providesTags : ["product"],
         }),
@@ -26,6 +26,7 @@ export const API = createApi({
                     method : "POST",
                     body : data.value,
                     headers : {
+                        //todo content-type cho biết rằng nội dung yêu cầu dạng json
                         "content-type": "application/json",
                         'authorization': `Bearer ${token}`
                     }
@@ -34,12 +35,21 @@ export const API = createApi({
             invalidatesTags : ['product']
 
         }),
-        Product_PUT : buider.mutation<void , Iproduct>({
-            query : ({_id , ...rest}) => ({
-                url : `product/${_id}`,
-                method : "PUT",
-                body : rest,
-            }),
+        Product_PUT : buider.mutation({
+            query : ({id , token , ...rest}) => {
+                console.log(id , token , rest);
+                
+                return {
+                    url : `product/${id}`,
+                    method : "PUT",
+                    body : rest.value,
+                    headers : {
+                        //todo content-type cho biết rằng nội dung yêu cầu dạng json
+                        "content-type": "application/json",
+                        'authorization': `Bearer ${token}`
+                    }
+                }
+            },
             invalidatesTags : ['product']
         }),
         Product_Delete : buider.mutation({
@@ -53,7 +63,7 @@ export const API = createApi({
 
         //todo Category
 
-        Category : buider.query<any , void>({
+        Category : buider.query<ICate, void>({
             query : () => "category",
             providesTags : ['Category']
         }),
@@ -61,11 +71,16 @@ export const API = createApi({
             query : (id) => `category/${id}`,
             providesTags : ['Category']
         }),
-        Category_ADD : buider.mutation<void , ICate>({
-            query : (data) => ({
+        Category_ADD : buider.mutation({
+            query : ({token,...data}) => ({
                 url : 'category',
                 method : "POST",
-                body : data,
+                body : data.value,
+                headers : {
+                    //todo content-type cho biết rằng nội dung yêu cầu dạng json
+                    "content-type": "application/json",
+                    'authorization': `Bearer ${token}`
+                }
             }),
             invalidatesTags : ['Category'] 
         }),
@@ -76,12 +91,20 @@ export const API = createApi({
              }),
              invalidatesTags : ['Category']
         }),
-        Category_PUT : buider.mutation<void , ICate>({
-            query : ({_id , ...rest}) => ({
-                url : `category/${_id}`,
-                method : 'PUT',
-                body : rest
-            }),
+        Category_PUT : buider.mutation({
+            query : ({id , token , ...rest}) => {
+                console.log(id , token , rest.value);
+                return {
+                    url : `category/${id}`,
+                    method : 'PUT',
+                    body : rest.newObj,
+                    headers : {
+                        //todo content-type cho biết rằng nội dung yêu cầu dạng json
+                        "content-type": "application/json",
+                        'authorization': `Bearer ${token}`
+                    }
+                }
+            },
             invalidatesTags : ['Category']
         }),
         //todo  User

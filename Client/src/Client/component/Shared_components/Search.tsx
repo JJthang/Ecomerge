@@ -9,7 +9,6 @@ type props={
 }
 const Search = ({data} : props) => {
     const [open, setOpen] = React.useState(false);
-    console.log(data);
     
     const [input , setinput] = React.useState<Iproduct[]>([]);
     const HandChanged = (value : React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +16,6 @@ const Search = ({data} : props) => {
         const Find_data : any = data && data?.data.filter((item : any) => value && item && item.Product_Name && item.Product_Name.toLowerCase().includes(value.target.value));
         setinput(Find_data);
     }
-    console.log(input);
     
     const handleClickOpen = () => {
         setOpen(true);

@@ -26,23 +26,13 @@ const Add_Product = () => {
   });
   const HandFormSubmit = async (value: any ) => {
     const {token} : any= JSON.parse(localStorage.getItem('user')!);
-    console.log(token);
-    if (token) {
-      console.log(1);
-      
-      value.Product_Image = await SubmitImage();
-      const CurrentValue = {
-        value,
-        token,
-      }
-      const Aleart = await Product_Add(CurrentValue);
-      alert(Aleart.data.message)
-      
-    }else{
-      console.log(2);
-
-      alert("You are not authorized")
+    value.Product_Image = await SubmitImage();
+    const CurrentValue = {
+      value,
+      token,
     }
+    const Aleart = await Product_Add(CurrentValue);
+    alert(Aleart.data.message)
 
   };
   const SubmitImage = async () => {
@@ -77,6 +67,7 @@ const Add_Product = () => {
                   color="secondary"
                   fullWidth
                   type="number"
+                  InputLabelProps={{ shrink: true }}
                   label="Product Price"
                   helperText={errors.Product_Price?.message}
                   {...register("Product_Price")}
