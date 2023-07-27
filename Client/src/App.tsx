@@ -17,6 +17,7 @@ import Product_Detail from './Client/Page/Product_Detail';
 import Cart from './Client/Page/Cart';
 import CheckOut from './Client/Page/CheckOut';
 import Show_Cart from './BackEnd/Page/Cart/Show_Order';
+import Contact from './Client/Page/Contact';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
             <Route path='/Register' element={<Register />} />
             <Route path='/SignIn' element={<Signin />} />
             <Route path='/CheckOut' element={<CheckOut />} />
+            <Route path='/Contact' element={<Contact />} />
          </Routes>
       </BrowserRouter>
     </>

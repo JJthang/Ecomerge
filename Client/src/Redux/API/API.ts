@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Interface_token, Iproduct } from "../../Interface/product";
 import { ICate } from "../../Interface/category";
-import { IFLogin, Regiter } from "../../Interface/All";
+import { IFEmail, IFLogin, Regiter } from "../../Interface/All";
 
 export const API = createApi({
     reducerPath : "Product_API",
@@ -159,7 +159,14 @@ export const API = createApi({
             query : () => "CheckOut",
             providesTags : ["checkOut"],
         }),
-        
+        //todo Email
+        Post_Email : buider.mutation<string, IFEmail>({
+            query : (body) => ({
+                url : "email",
+                method : "POST",
+                body,
+            })
+        })
     })
 })
 
@@ -168,5 +175,6 @@ export const { useCategoryQuery , useCategory_ADDMutation,
     useCategorysQuery, useProductQuery , useProduct_ADDMutation,
     useProduct_DeleteMutation, useProduct_PUTMutation, useProductsQuery,
     useRegisterMutation, useLoginMutation, usePost_CartMutation , useGet_One_CartQuery
-    , usePut_One_CartMutation, usePost_CheckOutMutation, useGet_One_CheckOutQuery, useGet_All_CheckOutQuery
+    , usePut_One_CartMutation, usePost_CheckOutMutation, useGet_One_CheckOutQuery, useGet_All_CheckOutQuery,
+    usePost_EmailMutation
     } = API

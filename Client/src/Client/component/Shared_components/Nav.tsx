@@ -26,10 +26,10 @@ const Nav = () => {
           </div>
           <div className="Menu_List">
             <a href="/">Home</a>
-            <a href="/">Shop</a>
+            <a href="/Product">Shop</a>
             <a href="/Product">Products</a>
             <a href="/Cart">Cart</a>
-            <a href="/">Contact</a>
+            <a href="/Contact">Contact</a>
 
           </div>
           <div className="Nav_cart">

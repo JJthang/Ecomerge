@@ -876,5 +876,315 @@ $primary-color: #60babe;
         height: 10%;
     }
 }
+//todo Contact
 
+.WrapConact{
+    width: 100%;
+    height: 900px;
+    .WrapNav{
+        width: 100%;
+        height: 18%;
+        @extend .configcenter;
+        background: #f1f2f6;
+        .Nav_title{
+            width: 100%;
+            height: 30%;
+            text-align: center;
+            h1{
+                font-size: 28px;
+                font-weight: 600;
+                color: $primary-color;
+                font-family: monospace;
+            }
+        }
+        .Nav_location{
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            a{
+                @extend .Configa;
+                font-weight: 500;
+            }
+            span{
+                padding: 0px 10px;
+            }
+        }
+    }
+    .Wrap_ctn{
+        width: 100%;
+        height: 78%;
+        margin-top: 4%;
+        @extend .configcenter_NoColum;
+        .Contact_ctn{
+            width: 80%;
+            height: 100%;
+            display: flex;
+            .Introduce_ctn{
+                width: 40%;
+                height: 85%;
+                background-color: $primary-color;
+                @extend .configcenter;
+                margin-top: 4%;
+                .Info_ctn{
+                    width: 90%;
+                    height: 90%;
+                    display: flex;
+                    .label{
+                        width: 20%;
+                        height: 100%;
+                        @extend .configcenter;
+                        h2{
+                            transform: rotate(180deg);
+                            writing-mode: vertical-lr;
+                            color: rgb(255 255 255 / 0.2);
+                            font-family: 'Bebas Neue', cursive;
+                            font-weight: 800;
+                            font-family: monospace;
+                            font-size: 2.2rem;
+                        }
+                    }
+                    .Info_List{
+                        width: 80%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
+                        .England{
+                            width: 100%;
+                            height: 29%;
+                            background-color: white;
+                            @extend .configcenter;
+                            .England_tt{
+                                width: 80%;
+                                height: 30%;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                .line{
+                                    width: 3px;
+                                    height: 60%;
+                                    background-color: $primary-color;
+                                    margin-bottom: 5px;
+                                }
+                                h2{
+                                    font-size: 1.5rem;
+                                    margin-left: 10px;
+                                    font-weight: 600;
+                                    color: #2f3942;
+                                    font-family: monospace;
+                                }
+                            }
+                            .England_ct{
+                                width: 80%;
+                                height: 40%;
+                                p{
+                                    color: #7d8fb3;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .Scotland{
+                            width: 100%;
+                            height: 29%;
+                            background-color: white;
+                            @extend .configcenter;
+                            .Scotland_tt{
+                                width: 80%;
+                                height: 30%;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                .line{
+                                    width: 3px;
+                                    height: 60%;
+                                    background-color: $primary-color;
+                                    margin-bottom: 5px;
+                                }
+                                h2{
+                                    font-size: 1.5rem;
+                                    margin-left: 10px;
+                                    font-weight: 600;
+                                    color: #2f3942;
+                                    font-family: monospace;
+                                }
+                            }
+                            .Scotland_ct{
+                                width: 80%;
+                                height: 40%;
+                                p{
+                                    color: #7d8fb3;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .Ireland{
+                            width: 100%;
+                            height: 29%;
+                            background-color: white;
+                            @extend .configcenter;
+                            .Ireland_tt{
+                                width: 80%;
+                                height: 30%;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                .line{
+                                    width: 3px;
+                                    height: 60%;
+                                    background-color: $primary-color;
+                                    margin-bottom: 5px;
+                                }
+                                h2{
+                                    font-size: 1.5rem;
+                                    margin-left: 10px;
+                                    font-weight: 600;
+                                    color: #2f3942;
+                                    font-family: monospace;
+                                }
+                            }
+                            .Ireland_ct{
+                                width: 80%;
+                                height: 40%;
+                                p{
+                                    color: #7d8fb3;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .Form_ctn{
+                width: 60%;
+                height: 98%;
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.06);
+                @extend .configcenter;
+                .wrap_form{
+                    width: 80%;
+                    height: 85%;
+                    .form_title{
+                        width: 100%;
+                        height: 20%;
+                        .intro{
+                            width: 100%;
+                            height: 40%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            .line{
+                                width: 3px;
+                                height: 60%;
+                                background-color: $primary-color;
+                                margin-bottom: 5px;
+                            }
+                            h2{
+                                font-size: 1.5rem;
+                                margin-left: 10px;
+                                font-weight: 600;
+                                color: #2f3942;
+                                font-family: monospace;
+                            }
+                        }
+                        .intro_text{
+                            width: 100%;
+                            height: 60%;
+                            p{
+                                color: #7d8fb3;
+                            }
+                        }
+                    }
+                    .form_container{
+                        width: 100%;
+                        height: 80%;
+                        form{
+                            width: 100%;
+                            height: 100%;
+                            .formName{
+                                width: 100%;
+                                height: 20%;
+                                display: flex;
+                                flex-direction: column;
+                                label{
+                                    color: #918FB3;
+                                }
+                                input{
+                                    border: 1px solid #e9e9e9;
+                                    background-color: #fcfcfd;
+                                    width: 100%;
+                                    height: 50px;
+                                    padding: 0 20px;
+                                    color: #918FB3;
+                                    &:focus{
+                                        outline:  none;
+                                    }
+                                }
+                            }
+                            .formEmail{
+                                width: 100%;
+                                height: 20%;
+                                display: flex;
+                                flex-direction: column;
+                                label{
+                                    color: #918FB3;
+                                }
+                                input{
+                                    border: 1px solid #e9e9e9;
+                                    background-color: #fcfcfd;
+                                    width: 100%;
+                                    height: 50px;
+                                    padding: 0 20px;
+                                    color: #918FB3;
+                                    &:focus{
+                                        outline:  none;
+                                    }
+                                }
+                            }
+                            .formText{
+                                width: 100%;
+                                height: 45%;
+                                display: flex;
+                                flex-direction: column;
+                                label{
+                                    color: #918FB3;
+                                }
+                                textarea{
+                                    padding: 10px 15px;
+                                    border: 1px solid #e9e9e9;
+                                    background-color: #fcfcfd;
+                                    &:focus{
+                                        outline: none;
+                                    }
+                                    
+                                }
+                            } 
+                            .formButton{
+                                width: 100%;
+                                height: 15%;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                button{
+                                    width: 20%;
+                                    height: 70%;
+                                    background-color: $primary-color;
+                                    border: none;
+                                    color: white;
+                                    font-weight: 700;
+                                    margin-top: 20px;
+                                    transition: 0.5s;
+                                    text-transform: capitalize;
+                                    &:hover{
+                                        background-color: white;
+                                        border: 1px solid $primary-color;
+                                        color: $primary-color;
+                                    }
+                                }
+                            }
 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

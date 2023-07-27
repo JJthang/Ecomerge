@@ -15,13 +15,6 @@ const List_Product = ({List_data} : List_props) => {
       const CurrentData : any = List_data?.filter((item : any) => item.Product_Price >=0 && item.Product_Price  <= parseInt(event.target.value))
       SetFind_data(CurrentData)
     }
-    console.log(Find_data);
-    // useEffect(() => {
-    //   console.log(FindPrice);
-      
-    // },[Find_data]);
-
-
     const Leng_Data = List_data?.length;
     const page = [];
     const IndexOfLastItem : number =  CurrentPage * ItemPage;

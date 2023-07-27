@@ -1,7 +1,8 @@
 import { validateEmail } from "../Validate/Email";
 import nodemailer from "nodemailer";
+import SchameUser from "../Models/User";
 
-export const Post_Email = (req, res) => {
+export const Post_Email = async (req, res) => {
   try {
     const { error } = validateEmail.validate(req.body);
     if (error) {
@@ -11,7 +12,12 @@ export const Post_Email = (req, res) => {
     }
     const { name, email, text } = req.body;
     console.log(name, email, text);
-
+    const user = await SchameUser.findOne({ User_email: email });
+    if (!user) {
+      return res.json({
+        message: "Wrong gmail account",
+      });
+    }
     // Tạo một transporter cho việc gửi email
     const transporter = nodemailer.createTransport({
       service: "Gmail",
@@ -23,7 +29,7 @@ export const Post_Email = (req, res) => {
 
     // Đối tượng cấu hình email
     const mailOptions = {
-      from: `${email}`, // Địa chỉ email gửi
+      from: `${user.User_email}`, // Địa chỉ email gửi
       to: "thangpdph@gmail.com", // Địa chỉ email người nhận
       subject: "Phản ánh từ khách hàng", // Tiêu đề email
       //   text: ``, // Nội dung email dạng text
@@ -40,8 +46,8 @@ export const Post_Email = (req, res) => {
       if (error) {
         console.log("Error occurred:", error.message);
       } else {
-        console.log("Email sent successfully!");
-        console.log("Message ID:", info.messageId);
+        // console.log("Email sent successfully!");
+        // console.log("Message ID:", info.messageId);
       }
     });
     return res.status(200).json({

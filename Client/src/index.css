@@ -1,13 +1,13 @@
-.Configa, .Wrap_body_Check .Check_title a, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a, .Wrap_body_Cart .Cart_title a, .Wrap_Detail .Detail_title a {
+.Configa, .WrapConact .WrapNav .Nav_location a, .Wrap_body_Check .Check_title a, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a, .Wrap_body_Cart .Cart_title a, .Wrap_Detail .Detail_title a {
   text-decoration: none;
   color: #566686;
   transition: 0.5s;
 }
-.Configa:hover, .Wrap_body_Check .Check_title a:hover, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a:hover, .Wrap_body_Cart .Cart_title a:hover, .Wrap_Detail .Detail_title a:hover {
+.Configa:hover, .WrapConact .WrapNav .Nav_location a:hover, .Wrap_body_Check .Check_title a:hover, .Wrap_body_Cart .Cart_table .Cart_table_container .table_total .CheckOut a:hover, .Wrap_body_Cart .Cart_title a:hover, .Wrap_Detail .Detail_title a:hover {
   color: #60babe;
 }
 
-.configcenter, .Wrap_body_Check .Check_Body .Check_Wrap .Check_form, .Wrap_body_Check .Check_title, .Wrap_body_Check, .Subtotal .Subtotal_child .Subtotal_child_price, .Wrap_body_Cart .Cart_title, .Wrap_Detail .Detail_product .Detail_product_wrap .desc, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img .wrap_Img, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img, .Wrap_Detail .Detail_product, .Wrap_Detail .Detail_title {
+.configcenter, .WrapConact .Wrap_ctn .Contact_ctn .Form_ctn, .WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland, .WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland, .WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England, .WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .label, .WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn, .WrapConact .WrapNav, .Wrap_body_Check .Check_Body .Check_Wrap .Check_form, .Wrap_body_Check .Check_title, .Wrap_body_Check, .Subtotal .Subtotal_child .Subtotal_child_price, .Wrap_body_Cart .Cart_title, .Wrap_Detail .Detail_product .Detail_product_wrap .desc, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img .wrap_Img, .Wrap_Detail .Detail_product .Detail_product_wrap form .form_img, .Wrap_Detail .Detail_product, .Wrap_Detail .Detail_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.configcenter_NoColum, .Wrap_body_Check .Check_Body, .Wrap_body_Cart .Cart_table {
+.configcenter_NoColum, .WrapConact .Wrap_ctn, .Wrap_body_Check .Check_Body, .Wrap_body_Cart .Cart_table {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -837,4 +837,304 @@
 .Wrap_body_Check .Check_Bottom {
   width: 80%;
   height: 10%;
+}
+
+.WrapConact {
+  width: 100%;
+  height: 900px;
+}
+.WrapConact .WrapNav {
+  width: 100%;
+  height: 18%;
+  background: #f1f2f6;
+}
+.WrapConact .WrapNav .Nav_title {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+.WrapConact .WrapNav .Nav_title h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #60babe;
+  font-family: monospace;
+}
+.WrapConact .WrapNav .Nav_location {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+.WrapConact .WrapNav .Nav_location a {
+  font-weight: 500;
+}
+.WrapConact .WrapNav .Nav_location span {
+  padding: 0px 10px;
+}
+.WrapConact .Wrap_ctn {
+  width: 100%;
+  height: 78%;
+  margin-top: 4%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn {
+  width: 80%;
+  height: 100%;
+  display: flex;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn {
+  width: 40%;
+  height: 85%;
+  background-color: #60babe;
+  margin-top: 4%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn {
+  width: 90%;
+  height: 90%;
+  display: flex;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .label {
+  width: 20%;
+  height: 100%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .label h2 {
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: "Bebas Neue", cursive;
+  font-weight: 800;
+  font-family: monospace;
+  font-size: 2.2rem;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England {
+  width: 100%;
+  height: 29%;
+  background-color: white;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England .England_tt {
+  width: 80%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England .England_tt .line {
+  width: 3px;
+  height: 60%;
+  background-color: #60babe;
+  margin-bottom: 5px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England .England_tt h2 {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2f3942;
+  font-family: monospace;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England .England_ct {
+  width: 80%;
+  height: 40%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .England .England_ct p {
+  color: #7d8fb3;
+  font-size: 16px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland {
+  width: 100%;
+  height: 29%;
+  background-color: white;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland .Scotland_tt {
+  width: 80%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland .Scotland_tt .line {
+  width: 3px;
+  height: 60%;
+  background-color: #60babe;
+  margin-bottom: 5px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland .Scotland_tt h2 {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2f3942;
+  font-family: monospace;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland .Scotland_ct {
+  width: 80%;
+  height: 40%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Scotland .Scotland_ct p {
+  color: #7d8fb3;
+  font-size: 16px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland {
+  width: 100%;
+  height: 29%;
+  background-color: white;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland .Ireland_tt {
+  width: 80%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland .Ireland_tt .line {
+  width: 3px;
+  height: 60%;
+  background-color: #60babe;
+  margin-bottom: 5px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland .Ireland_tt h2 {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2f3942;
+  font-family: monospace;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland .Ireland_ct {
+  width: 80%;
+  height: 40%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Introduce_ctn .Info_ctn .Info_List .Ireland .Ireland_ct p {
+  color: #7d8fb3;
+  font-size: 16px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn {
+  width: 60%;
+  height: 98%;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.06);
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form {
+  width: 80%;
+  height: 85%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title {
+  width: 100%;
+  height: 20%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title .intro {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title .intro .line {
+  width: 3px;
+  height: 60%;
+  background-color: #60babe;
+  margin-bottom: 5px;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title .intro h2 {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2f3942;
+  font-family: monospace;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title .intro_text {
+  width: 100%;
+  height: 60%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_title .intro_text p {
+  color: #7d8fb3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container {
+  width: 100%;
+  height: 80%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form {
+  width: 100%;
+  height: 100%;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formName {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formName label {
+  color: #918FB3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formName input {
+  border: 1px solid #e9e9e9;
+  background-color: #fcfcfd;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  color: #918FB3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formName input:focus {
+  outline: none;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formEmail {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formEmail label {
+  color: #918FB3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formEmail input {
+  border: 1px solid #e9e9e9;
+  background-color: #fcfcfd;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  color: #918FB3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formEmail input:focus {
+  outline: none;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formText {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formText label {
+  color: #918FB3;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formText textarea {
+  padding: 10px 15px;
+  border: 1px solid #e9e9e9;
+  background-color: #fcfcfd;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formText textarea:focus {
+  outline: none;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formButton {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formButton button {
+  width: 20%;
+  height: 70%;
+  background-color: #60babe;
+  border: none;
+  color: white;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+.WrapConact .Wrap_ctn .Contact_ctn .Form_ctn .wrap_form .form_container form .formButton button:hover {
+  background-color: white;
+  border: 1px solid #60babe;
+  color: #60babe;
 }/*# sourceMappingURL=index.css.map */

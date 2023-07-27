@@ -30,6 +30,7 @@ const SignIn_cp = () => {
         navigate("/Admin")
         alert("Admin login successful")
       }else{
+        alert("Login successful")
         navigate("/")
       }
     }else{
