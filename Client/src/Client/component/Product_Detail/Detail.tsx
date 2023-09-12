@@ -12,7 +12,7 @@ const Detail = () => {
   const [Post_Cart] = usePost_CartMutation();
   const Submitform = async (e : any) => {
     const targetObject = Object.assign(e, data?.data, size);
-    const id_user = JSON.parse(localStorage.getItem("user") || '{}') ;
+    const id_user = JSON.parse(localStorage.getItem("user") || null) ;
     if (id_user) {
       const Detail_product = {
         id_user : id_user.user._id,
@@ -27,9 +27,6 @@ const Detail = () => {
   const TakeSize = (e : React.ChangeEvent<HTMLInputElement>) => {
     setsize({...size, [e.target.name] : e.target.value});
   }
-  
-
-
   return (
     <div className="Wrap_Detail">
       <div className="Detail_title">

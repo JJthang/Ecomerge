@@ -9,7 +9,7 @@ export const API = createApi({
     baseQuery : fetchBaseQuery( { baseUrl : "http://localhost:8080/api/" }),
     endpoints : (buider) => ({
         //todo query< 1 , 2 > : 1 là type giá trị xuất ra còn 2 là giá trị khi truyền vào fuction
-        product : buider.query<any , void>({
+        product : buider.query<Iproduct[] , void>({
             query : () => "product",
             providesTags : ["product"],
         }),
@@ -177,4 +177,4 @@ export const { useCategoryQuery , useCategory_ADDMutation,
     useRegisterMutation, useLoginMutation, usePost_CartMutation , useGet_One_CartQuery
     , usePut_One_CartMutation, usePost_CheckOutMutation, useGet_One_CheckOutQuery, useGet_All_CheckOutQuery,
     usePost_EmailMutation
-    } = API
+    } = API;

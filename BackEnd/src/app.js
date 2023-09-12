@@ -7,6 +7,7 @@ import RouteUser from "./Routes/User";
 import RouteCate from "./Routes/Cate";
 import RouteCheckOut from "./Routes/CheckOut";
 import routeEmail from "./Routes/Email";
+import { connectDB } from "./config/db";
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,6 @@ app.use("/api", RouteUser);
 app.use("/api", RouteCate);
 app.use("/api", RouteCheckOut);
 app.use("/api", routeEmail);
-
-mongoose.connect(API);
+connectDB();
+// mongoose.connect(API);
 export const viteNodeApp = app;
